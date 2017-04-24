@@ -1,7 +1,7 @@
 var oList=document.getElementsByClassName("list1");
 var ogg=document.getElementsByClassName("g1");
 for(var i=0;i<ogg.length;i++){
-	ogg[i].style.display="none";
+	ogg[i].style.display="block";
 }
 for(var i=0;i<oList.length;i++){
 	oList[i].index=i;
@@ -13,7 +13,7 @@ for(var i=0;i<oList.length;i++){
 		   	}else{
 		   		oG1[i].style.display="block";
 		   	}
-	   	 
+
 	   }
 	}
 }
@@ -41,24 +41,20 @@ oTop.onclick=function(){
 }
 var timer;
 function demo(){
-	
-	var sTop=document.body.scrollTop||document.documentElement.scrollTop;	
+
+	var sTop=document.body.scrollTop||document.documentElement.scrollTop;
 	var sTop=sTop-sTop/7;
 	sTop=sTop>0?sTop:Math.floor(sTop);
 	if(document.body.scrollTop){
 		document.body.scrollTop=sTop;
 	}
-	else{		
+	else{
 		document.documentElement.scrollTop=sTop;
 	}
 
 	if(sTop==0){
 		clearInterval(timer);
 	}
-	
-	
+
+
 }
-
-
-
-

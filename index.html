@@ -6,7 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" >
         <title>前端从这里开始</title>
         <link rel="stylesheet" href="css/index.css" />
-
+		<script src="./node_modules/jquery/dist/jquery.js"></script>
+		
     </head>
     <body>
         <div class="header">
@@ -72,15 +73,6 @@
                         <li><a href="http://www.cnsecer.com/" target="_blank">安全者</a></li>
                         <li><a href="http://123.jser.us/" target="_blank">导航</a></li>
                         <li><a target="_blank" href="https://jirengu.com/">饥人谷</a></li>
-                        <!-- <li><a href="" target="_blank"></a></li>
-                        <li><a href="" target="_blank"></a></li>
-                        <li><a href="" target="_blank"></a></li>
-                        <li><a href="" target="_blank"></a></li>
-                        <li><a href="" target="_blank"></a></li>
-                        <li><a href="" target="_blank"></a></li>
-                        <li><a href="" target="_blank"></a></li> -->
-
-
                     </ul>
                 </dd>
             </dl>
@@ -128,12 +120,6 @@
                       <li><a href="http://dev.dcloud.net.cn/mui/" target="_blank">MUI</a></li>
                       <li><a href="http://m.sui.taobao.org/" target="_blank">SUI Mobile</a></li>
                       <li><a href="http://jquerymobile.com/" target="_blank">jQeruy Mobile</a></li>
-                      <!--
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>       -->
                     </ul>
                 </dd>
             </dl>
@@ -149,7 +135,6 @@
                       <li><a href="http://www.swiper.com.cn/" target="_blank">Swiper</a></li>
                       <li><a href="TouchSlide" target="_blank">TouchSlide</a></li>
                       <li><a href="http://be-fe.github.io/iSlider/demo/index_chinese#intro-detail" target="_blank">iSlider Demo</a></li>
-                      <!-- <li><a href="" target="_blank"></a></li>      -->
                     </ul>
                 </dd>
             </dl>
@@ -167,7 +152,6 @@
                       <li><a href="http://www.css88.com/" target="_blank">Zeptojs</a></li>
                       <li><a href="http://echarts.baidu.com/index.html" target="_blank">百度echarts</a></li>
                       <li><a href="http://www.bootcss.com/p/chart.js/docs/" target="_blank">charts中文文档</a></li>
-                      <!-- <li><a href="" target="_blank"></a></li>      -->
                     </ul>
                 </dd>
             </dl>
@@ -227,7 +211,6 @@
                       <li><a href="http://www.eclipse.org/downloads/" target="_blank">eclipse官网</a></li>
                       <li><a href="http://www.jetbrains.com/idea/" target="_blank">IntelliJ IDE官网</a></li>
                       <li><a href="http://www.aptana.com/" target="_blank">Aptana官网</a></li>
-                      <!-- <li><a href="" target="_blank"></a></li>  -->
                     </ul>
                 </dd>
             </dl>
@@ -267,9 +250,6 @@
                       <li><a href="http://css3.me/" target="_blank">CSS3ME</a></li>
                       <li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank">CSS3渐变颜色</a></li>
                       <li><a href="http://koala-app.com/index-zh.html" target="_blank">Koala</a></li>
-                      <!-- <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>        -->
 
 
                       <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Border-image_generator" target="_blank">CSS3Border演示</a></li>
@@ -336,20 +316,6 @@
                     </ul>
                 </dd>
             </dl>
-            <!--<dl class="g1">
-                <dt class="title1">在线生成</dt>
-                <dd>
-                    <ul class="link">
-
-
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-
-                    </ul>
-                </dd>
-            </dl>-->
         </div>
         <!--前端工具箱结束-->
         <!--UED start-->
@@ -454,20 +420,6 @@
                     <ul class="link">
                       <li><a href="http://coffee-script.org/" target="_blank">coffeeScript</a></li>
                       <li><a href="https://spec.whatwg.org/" target="_blank" title="web超文本应用工作组">WHATWG</a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
-                      <li><a href="" target="_blank"></a></li>
                     </ul>
                 </dd>
             </dl>
@@ -740,8 +692,23 @@
             <p>
                 问题反馈dengyongchao@126.com
             </p>
+           	<textarea name="" id="data" style="display: none" cols=""></textarea>
         </div>
         <div id="topone"><span>回到</span><span>顶部</span></div>
         <script src="js/index.js" ></script>
+        <script>
+			const data = [];
+			$('a').each((i, el)=>{
+				const obj = {};
+				obj.listType=$(el).parents('.list1').find('h3').html();
+				obj.titleType = $(el).parents('.g1').find('.title1').html();
+				obj.href=$(el).attr('href');
+				obj.title=$(el).html();
+				console.log(obj);
+				obj.description = ""
+				data.push(obj);
+			});
+			$('#data').val(JSON.stringify(data));
+		</script>
     </body>
 </html>

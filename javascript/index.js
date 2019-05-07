@@ -55,6 +55,4 @@ function demo(){
 	if(sTop==0){
 		clearInterval(timer);
 	}
-
-
 }

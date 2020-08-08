@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>测试屏幕坏点</title>
+        <style>
+        :root {
+            --body-color: #fff;
+        }
+        body {
+            background: var(--body-color);
+        }
+        #info {
+            text-align: center;
+            font-weight: bold;
+            color: green;
+        }
+
+    </style>
+    </head>
+    <body>
+        <div id="info">点击屏幕开始进入全屏测试 <br>测试约8秒</div>
+        <script type="text/javascript">
+            const fullScreen = () => {
+                const el = document.documentElement;
+                if(el.requestFullscreen) {
+                    el.requestFullscreen();
+                } else if(el.mozRequestFullScreen) {
+                    el.mozRequestFullScreen();
+                } else if(el.webkitRequestFullScreen) {
+                    el.webkitRequestFullScreen();
+                } else if(el.msRequestFullscreen) {
+                    el.msRequestFullscreen(); 
+                }
+            }
+            const exitScreen = () => {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen(); //W3C
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen(); //Firefox
+                } else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+            let isStart = false;
+            const startTest = () => {
+                const elem = document.documentElement;
+                // 红橙黄绿青蓝紫
+                const colors = ['#FF0000', '#FF7D00', '#FFFF00', '#00FF00', '#00FFFF','#0000FF', '#FF00FF', '#FFF'];
+                let current = 0;
+                isStart = true;
+                let timerID = setInterval(() => { 
+                    elem.style.setProperty('--body-color', colors[current]);
+                    current += 1;
+                    if (current === colors.length) {
+                        clearInterval(timerID);
+                        timerID = null;
+                        isStart = false;
+                        exitScreen();
+                        document.getElementById('info').style.display = 'block';
+                    }
+                }, 1000)
+            }
+            document.onclick = function() {
+                if (!isStart) {
+                    fullScreen();
+                    startTest();
+                    document.getElementById('info').style.display = 'none';
+                }
+            }
+
+
+        </script>
+    </body>
+</html>

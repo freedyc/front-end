@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools</title>
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-router/3.4.3/vue-router.min.js"></script>
+    <script src="https://cdn.staticfile.org/systemjs/6.5.1/system.min.js"></script>
+    <style>
+        .title {
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: left;
+            font-size: 18px;
+            margin: 20px;
+        }
+        .nav a {
+            color: #898989;
+            text-decoration: none;
+            text-align: center;
+            padding: 0 8px;
+            margin-left: 16px;
+        }
+        a:hover { 
+            color: green;
+        }
+        .content {
+            position: absolute;
+            top: 80px;
+            left: 60px;
+            right: 60px;
+            bottom: 30px;
+            border: 1px dotted green;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/javascript">
+        Vue.use(VueRouter);
+        Vue.component('app', {
+            template: `
+                <div>
+                    <div class="nav">
+                        <router-link to='/'>Home</router-link>
+                        <router-link to='/zip'>ZIP</router-link>
+                    </div>
+                    <div class="content">
+                        <router-view></router-view>
+                    </div>
+                </div>
+            `,
+        });
+        const Home = {
+            template: '<div>工具集，开发一下实用的在线工具提供大家使用</div>'
+        }
+        const JSzip = {
+            template: '<div>ZIP....</div>'
+        }
+        const router = new VueRouter({
+            mode: 'hash',
+            routes: [
+                {
+                    path: "/",
+                    component: Home
+                },
+                {
+                    path: "/jszip",
+                    component: () => System.import('./src/jszip.js'),
+                },
+            ]
+        });
+        new Vue({
+            router,
+            template: "<app />",
+        }).$mount("#app");
+    </script>
+</body>
+</html>

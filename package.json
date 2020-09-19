@@ -4,8 +4,10 @@
   "description": "Front-end Navgation",
   "main": "index.js",
   "scripts": {
-    "deploy": "node ./scripts/publish.js",
-    "semantic-release": "semantic-release"
+    "deploy": "npm run build && node ./scripts/publish.js",
+    "semantic-release": "semantic-release",
+    "dev": "parcel index.html",
+    "build": "rm -rf dist && parcel build index.html --no-source-maps"
   },
   "repository": "git+https://github.com/freedyc/front-end.git",
   "author": "dengyongchao <dengyongchao@126.com>",
@@ -16,10 +18,12 @@
   "homepage": "https://github.com/freedyc/front-end#readme",
   "dependencies": {
     "chalk": "^4.1.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",
+    "sass": "^1.26.11",
     "semantic-release": "^17.1.1"
   }
 }

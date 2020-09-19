@@ -6,7 +6,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" >
         <title>前端从这里开始</title>
         <link rel="stylesheet" href="css/index.css" />
-		<script src="./javascript/jquery.js"></script>
     </head>
     <body>
         <div class="header">
@@ -494,7 +493,7 @@
                 <dt class="title1">站内</dt>
                 <dd>
                     <ul class="link">
-                        <li><a target="_blank" href="./src/test-screen.html">测试屏幕坏点</a></li>
+                        <li><a target="_blank" href="./packages/test-screen/test-screen.html">测试屏幕坏点</a></li>
                     </ul>
                 </dd>
             </dl>
@@ -510,20 +509,7 @@
             </p>
         </div>
         <div id="topone"><span>回到</span><span>顶部</span></div>
-
-        <script src="javascript/index.js" ></script>
-        <script>
-			const data = [];
-			$('a').each((i, el)=>{
-				const obj = {};
-				obj.listType=$(el).parents('.list1').find('h3').html();
-				obj.titleType = $(el).parents('.g1').find('.title1').html();
-				obj.href=$(el).attr('href');
-				obj.title=$(el).html();
-				obj.description = ""
-				data.push(obj);
-			});
-			$('#data').val(JSON.stringify(data));
-		</script>
+        <script src="javascript/index.js"></script>
+        <script src="javascript/genurl.js"></script>
     </body>
 </html>

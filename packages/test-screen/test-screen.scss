@@ -1,0 +1,11 @@
+:root {
+    --body-color: #fff;
+}
+body {
+    background: var(--body-color);
+}
+#info {
+    text-align: center;
+    font-weight: bold;
+    color: green;
+}

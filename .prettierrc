@@ -1,0 +1,19 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "printWidth": 120,
+    "overrides": [
+        {
+            "files": ["*.html"],
+            "options": {
+                "tabWidth": 2,
+                "printWidth": 150
+            }
+        }
+    ]
+}

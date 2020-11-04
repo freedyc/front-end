@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Worker</title>
-    <script src="index.js"></script>
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+          console.log(navigator.serviceWorker.controller);
+          navigator.serviceWorker.register('/sw.js')
+              .then(function(registration) {
+                  console.log('Success', registration.scope);
+              }).catch(function(err) {
+                  console.log('Error', err);
+              });
+      }
+      </script>
 </head>
 <body>
-    
+    <h1>Lookz.cn</h1>
 </body>
 </html>

@@ -5,6 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>测试屏幕坏点</title>
         <link rel="stylesheet" href="./test-screen.scss">
+        <script type="text/javascript">
+          if ('serviceWorker' in navigator) {
+              console.log(navigator.serviceWorker.controller);
+              navigator.serviceWorker.register('./sw.js')
+                  .then(function(registration) {
+                      console.log('Success', registration.scope);
+                  }).catch(function(err) {
+                      console.log('Error', err);
+                  });
+          }
+          </script>
     </head>
     <body>
         <div id="info">点击屏幕开始进入全屏测试 <br>测试约8秒</div>

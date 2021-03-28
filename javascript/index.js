@@ -56,3 +56,8 @@ function demo(){
 		clearInterval(timer);
 	}
 }
+
+
+const getCopyright = () => `©️2016-${new Date().getFullYear()} Freedyc`
+
+document.getElementById('copyright').innerHTML = getCopyright();

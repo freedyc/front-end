@@ -8,7 +8,7 @@
 // 最后，通过fetch事件拦截网络请求做访问缓存逻辑处理。
 var cacheName = 'Freedyc-v1'; //添加缓存版本戳
 var filesToCache = [
-  '/test-screen.html',
+  '/packages/test-screen/test-screen.html',
   '/',
 ];
 self.addEventListener('install', function (event) {

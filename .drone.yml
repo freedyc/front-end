@@ -5,11 +5,11 @@ name: web
 
 steps:
 - name: install
-  image: node:alpine
+  image: node:14
   commands:
   - npm i --registry=https://registry.npm.taobao.org
 
 - name: test
-  image: node:alpine
+  image: node:14
   commands:
   - npm run playwright

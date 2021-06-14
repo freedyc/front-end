@@ -12,6 +12,7 @@ steps:
   settings:
     restore: true
     mount:
+      - ./.npm-cache  
       - ./node_modules
 
 - name: install
@@ -24,7 +25,7 @@ steps:
   image: node
   failure: ignore
   commands:
-  - yarn playwright
+  - npm run playwright
 
 - name: build
   image: node
@@ -63,6 +64,7 @@ steps:
   settings:
     rebuild: true
     mount:
+      - ./.npm-cache  
       - ./node_modules
 volumes:
   - name: cache

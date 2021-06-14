@@ -31,7 +31,6 @@
     "majestic": "^1.8.0",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
-    "playwright": "^1.10.0",
     "rsync": "^0.6.1",
     "sass": "^1.26.11",
     "selenium-webdriver": "^4.0.0-alpha.7",

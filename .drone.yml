@@ -2,10 +2,6 @@
 kind: pipeline
 type: docker
 name: web
-volumes:
-  - name: cache
-    host: 
-      path: /tmp/cache
 steps:
 - name: restore-cache
   image: drillster/drone-volume-cache
@@ -67,3 +63,8 @@ steps:
     rebuild: true
     mount:
       - ./node_modules
+
+volumes:
+  - name: cache
+    host: 
+      path: /tmp/cache

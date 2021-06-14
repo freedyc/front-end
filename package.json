@@ -33,6 +33,7 @@
     "parcel-bundler": "^1.12.4",
     "rsync": "^0.6.1",
     "sass": "^1.26.11",
+    "playwright": "^1.10.0",
     "selenium-webdriver": "^4.0.0-alpha.7",
     "semantic-release": "^17.1.1",
     "shelljs": "^0.8.4",

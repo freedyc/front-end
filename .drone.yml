@@ -53,10 +53,11 @@ steps:
     token: da1643f55595bab854144f529a7df48a9f6cfbf509a2a7d285c76b7bb5543c13
     type: markdown
     secret: SEC9566f2ed09b21bcc4e373fc457bb38289b9da7347afdf66279f816d2d8c9f99a
-when:
+  when:
     status:
     - failure
     - success
+
 - name: rebuild-cache
   image: drillster/drone-volume-cache
   volumes:

@@ -1,7 +1,6 @@
 node_modules
 .DS_Store
 .cache
-package-lock.json
 dist
 .parcel-cache
 

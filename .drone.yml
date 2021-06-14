@@ -34,16 +34,6 @@ steps:
   commands:
   - npm run build
 
-- name: rebuild-cache
-  image: drillster/drone-volume-cache
-  volumes:
-  - name: cache
-    path: /cache
-  settings:
-    rebuild: true
-    mount:
-      - ./node_modules
-
 - name: rsync
   image: drillster/drone-rsync
   environment:
@@ -67,3 +57,12 @@ when:
     status:
     - failure
     - success
+- name: rebuild-cache
+  image: drillster/drone-volume-cache
+  volumes:
+  - name: cache
+    path: /cache
+  settings:
+    rebuild: true
+    mount:
+      - ./node_modules

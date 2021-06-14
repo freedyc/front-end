@@ -13,3 +13,22 @@ steps:
   image: node:14
   commands:
   - npm run playwright
+
+- name: build
+  image: node:14
+  commands:
+  - npm run build
+
+- name: rsync
+  image: drillster/drone-rsync
+  environment:
+    RSYNC_KEY:
+      from_secret: rsync_key
+  settings:
+    user: root
+    hosts:
+      - bugchao.com
+    source: ./dist
+    target: /usr/share/front-end
+    secrets: [ rsync_key ]
+

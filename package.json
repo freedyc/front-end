@@ -4,14 +4,15 @@
   "description": "Front-end Navgation",
   "browser": "dist/index.html",
   "scripts": {
-    "deploy": "npm-run-all clean build cname publish",
     "dev": "parcel index.html",
     "clean": "rm -rf dist",
     "build": "parcel build index.html --no-source-maps",
     "cname": "cp CNAME dist",
     "publish": "node ./scripts/publish.js",
     "jest": "majestic",
-    "playwright": "node tests/e2e/bugchao.spec.js"
+    "playwright": "node tests/e2e/bugchao.spec.js",
+    "deploy:gh-page": "npm-run-all clean build cname publish",
+    "deploy:server": "node ./scripts/deploy hw"
   },
   "repository": "git+https://github.com/freedyc/front-end.git",
   "author": "dengyongchao <dengyongchao@126.com>",
@@ -24,14 +25,18 @@
     "jquery": "^3.3.1"
   },
   "devDependencies": {
+    "colors": "^1.4.0",
     "gh-pages": "^3.1.0",
     "jest": "^26.6.3",
     "majestic": "^1.8.0",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
     "playwright": "^1.10.0",
+    "rsync": "^0.6.1",
     "sass": "^1.26.11",
     "selenium-webdriver": "^4.0.0-alpha.7",
-    "semantic-release": "^17.1.1"
+    "semantic-release": "^17.1.1",
+    "shelljs": "^0.8.4",
+    "yargs": "^17.0.1"
   }
 }

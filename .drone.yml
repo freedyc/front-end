@@ -1,0 +1,15 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: install
+  image: yarnpkg/node-yarn
+  commands:
+  - yarn
+
+- name: test
+  image: yarnpkg/node-yarn
+  commands:
+  - yarn playwright

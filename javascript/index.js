@@ -72,7 +72,7 @@ const setTheme = (name) => {
 const getTheme = () => document.querySelector("html").dataset.theme
 
 const localTheme = localStorage.getItem('theme');
-setTheme(localTheme);
+setTheme(localTheme || 'light');
 
 themeButton.onclick = function() {
 	const next = getTheme() === 'light' ? 'dark' : 'light';

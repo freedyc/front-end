@@ -61,3 +61,21 @@ function demo(){
 const getCopyright = () => `©️2016-${new Date().getFullYear()} Freedyc`
 
 document.getElementById('copyright').innerHTML = getCopyright();
+
+
+
+const themeButton = document.querySelector('.theme-switch');
+
+const setTheme = (name) => {
+	document.querySelector("html").dataset.theme = name;
+}
+const getTheme = () => document.querySelector("html").dataset.theme
+
+const localTheme = localStorage.getItem('theme');
+setTheme(localTheme);
+
+themeButton.onclick = function() {
+	const next = getTheme() === 'light' ? 'dark' : 'light';
+	setTheme(next);
+	localStorage.setItem('theme', next);
+}

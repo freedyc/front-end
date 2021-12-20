@@ -10,4 +10,5 @@ $('a').each((i, el)=>{
     _data.push(obj);
 });
 
-$('#data').val(JSON.stringify(_data));
+// console.log(_data);
+$('#data').html(JSON.stringify(_data));
